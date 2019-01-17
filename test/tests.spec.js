@@ -26,19 +26,9 @@ describe('rollup-plugin-copy-assets-to', () => {
     assertExists('output/top-level-item.txt');
   });
 
-  it('should copy folders to output dir with same hierarchy', async () => {
+  it('should copy folder contents', async () => {
     await build({
       assets: [ 'fixtures/assets' ],
-    });
-
-    assertExists('output/assets');
-    assertExists('output/assets/foo.txt');
-    assertExists('output/assets/bar.csv');
-  });
-
-  it('should copy all paths given to it', async () => {
-    await build({
-      assets: [ 'fixtures/assets', 'fixtures/top-level-item.txt' ],
     });
 
     assertExists('output/assets');
