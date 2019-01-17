@@ -1,20 +1,26 @@
-# rollup-plugin-copy-assets
+# rollup-plugin-copy-assets-to
 
 ![build status](https://api.travis-ci.org/bengsfort/rollup-plugin-copy-assets.svg?branch=master) [![npm version](https://badge.fury.io/js/rollup-plugin-copy-assets.svg)](https://www.npmjs.com/package/rollup-plugin-copy-assets)
 
-Copy additional assets into the output directory of your rollup bundle.
+Copy additional assets into a directory you choose.
 
 ## Installation
 
-```shell
-npm install --save-dev rollup-plugin-copy-assets
+_with npm_
+```bash
+npm install --save-dev rollup-plugin-copy-assets-to
+```
+
+_with Yarn_
+```bash
+yarn add --dev rollup-plugin-copy-assets-to
 ```
 
 ## Usage
 
 ```js
 // rollup.config.js
-import copy from 'rollup-plugin-copy-assets';
+import copyTo from 'rollup-plugin-copy-assets-to';
 
 export default {
   entry: 'src/index.js',
@@ -24,18 +30,23 @@ export default {
       assets: [
         './src/assets',
         './src/external/buffer.bin',
+        './src/component/assets/image.png',
       ],
+      outputDir: 'dist/allAssets'
     }),
   ],
 };
 ```
 
-On final bundle generation the provided files will be copied over into the output folder of your rollup bundle.
+On final bundle generation the provided files will be copied over into the folder chosen with outputDir.
 
 ```bash
 # Source directory structure
 src/
 - index.js
+- component/
+  - assets/
+    - image.png
 - assets/
   - some-library-needing-special-treatment.js
 - external/
@@ -44,15 +55,16 @@ src/
 # Output directory structure
 dist/
 - bundle.js
-- assets/
+- allAssets/
   - some-library-needing-special-treatment.js
-- external/
+  - image.png
   - buffer.bin
 ```
 
 ### Options
 
 - `assets`: **(required)** An array of paths to copy. Accepts files as well as directories.
+- `outputDir`: **(optional)** Path to the directory where assets will be copied to (defaults to bundle output location).
 
 ## License
 
