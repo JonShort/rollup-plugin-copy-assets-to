@@ -24,14 +24,11 @@ export default {
       babelrc: false,
       presets: [
         [
-          'env',
+          '@babel/env',
           {
             modules: false,
           },
         ],
-      ],
-      plugins: [
-        'external-helpers',
       ],
     }),
   ],
