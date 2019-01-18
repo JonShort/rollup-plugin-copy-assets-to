@@ -1,7 +1,7 @@
 # rollup-plugin-copy-assets-to
 
 [![Build Status](https://travis-ci.org/JonShort/rollup-plugin-copy-assets-to.svg?branch=master)](https://travis-ci.org/JonShort/rollup-plugin-copy-assets-to)
-[![npm version](https://badge.fury.io/js/rollup-plugin-copy-assets.svg)](https://www.npmjs.com/package/rollup-plugin-copy-assets)
+[![npm version](https://badge.fury.io/js/rollup-plugin-copy-assets-to.svg)](https://www.npmjs.com/package/rollup-plugin-copy-assets-to)
 
 Copy additional assets into a directory you choose.
 
