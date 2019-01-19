@@ -19,6 +19,9 @@
     "prebuild": "rimraf dist/*",
     "lint": "eslint ./src"
   },
+  "jest": {
+    "testEnvironment": "node"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/JonShort/rollup-plugin-copy-assets-to"
