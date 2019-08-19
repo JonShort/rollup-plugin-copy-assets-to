@@ -7,8 +7,12 @@ import copyTo from '../dist/rollup-plugin-copy-assets-to.module';
 process.chdir(__dirname);
 
 describe('rollup-plugin-copy-assets-to', () => {
-  beforeEach(() => {
-    fs.remove('output');
+  beforeAll(async () => {
+    await fs.remove('output');
+  });
+
+  afterEach(async () => {
+    await fs.remove('output');
   });
 
   it('should copy the assets to the output dir provided', async () => {
@@ -47,7 +51,7 @@ describe('rollup-plugin-copy-assets-to', () => {
   });
 });
 
-// Run the rollup build with an plugin configuration.
+// Run the rollup build with an example configuration.
 const build = (config) => new Promise(async resolve => {
     const bundle = await rollup({
       input: './fixtures/index.js',
