@@ -4,3 +4,4 @@ dist
 .vscode
 test/output
 yarn.lock
+npm-debug.log
