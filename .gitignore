@@ -1,5 +1,7 @@
+.DS_Store
 node_modules
 dist
 .vscode
-package-lock.json
 test/output
+yarn.lock
+npm-debug.log
